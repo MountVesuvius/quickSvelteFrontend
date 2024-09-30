@@ -1,6 +1,8 @@
 // place files you want to import through the `$lib` alias in this folder.
 // this is not how you would usually do things, but i needed to get this done really fast
 
+import { redirect } from '@sveltejs/kit';
+
 import { goto } from '$app/navigation';
 import axios from 'axios';
 

@@ -1,6 +1,7 @@
 <script lang='ts'>
-    import { getUserById } from '$lib';
+    import { getUserById, getAccessToken } from '$lib';
     import { onMount } from 'svelte';
+    import { goto } from '$app/navigation';
 
     let content: string = '';
 
@@ -10,8 +11,8 @@
             console.log(response.data);
             content = JSON.stringify(response.data) ;
         } catch (err) {
-            error = 'Invalid username or password';
             console.error(err);
+            goto('/login')
         }
     })
 </script>
